@@ -7,4 +7,5 @@ const (
 	SNORT_RELAY  = "wss://relay.snort.social"
 	EDEN_RELAY   = "wss://eden.nostr.land"
 	WINE_RELAY   = "wss://nostr.wine"
+	WIZ_RELAY    = "wss://nostr.fmt.wiz.biz"
 )
