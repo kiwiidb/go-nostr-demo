@@ -21,7 +21,7 @@ func main() {
 		CreatedAt: time.Now(),
 		Kind:      1,
 		Tags:      nil,
-		Content:   "TODO: fill in",
+		Content:   "Hello from Full Stack in Go",
 	}
 
 	// calling Sign sets the event ID field and the event Sig field

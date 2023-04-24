@@ -28,7 +28,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	secretMessage := "hello"
+	secretMessage := "hello from antwerp: encrypted"
 	encryptedContent, err := nip04.Encrypt(secretMessage, ss)
 	if err != nil {
 		panic(err)
