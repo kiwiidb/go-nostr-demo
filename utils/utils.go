@@ -8,4 +8,5 @@ const (
 	EDEN_RELAY   = "wss://eden.nostr.land"
 	WINE_RELAY   = "wss://nostr.wine"
 	WIZ_RELAY    = "wss://nostr.fmt.wiz.biz"
+	NIP47_RELAY  = "wss://relay.getalby.com/v1"
 )

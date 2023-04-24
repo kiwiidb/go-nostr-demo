@@ -1,0 +1,6 @@
+{
+	"method": "pay_invoice",
+	"params": {
+		"invoice": "lnbc1230n1pjyvs0kpp56vq9eu37hcn6vuyyzkxjz058pv6qmq76pkuwuwcyqcjqxdcsjy2qdq5g9kxy7fqd9h8vmmfvdjssp5gzl9x8h8ce2mrvvmsxx9frarl2jtg52g7rcv4hfn967c0ewdyw7smqz9gxqyz5vqcqp79q2sqqqqqysgqg2r094pvsduedfmnasy4x0qntrnx8eap0dc5pnqa2nuv44t2n3w3hqrxedlfg3usz9yts6fm2wyejt9j28wfazeps3sm65txkhxg0qgp3mewkm"
+	}
+}
