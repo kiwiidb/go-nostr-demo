@@ -20,6 +20,16 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	var filters nostr.Filters
+	filters = []nostr.Filter{{
+		Kinds:   []int{13194, 23195},
+		Authors: []string{nip47RecipientPubkey},
+	}}
+	relay, err := nostr.RelayConnect(context.Background(), utils.NIP47_RELAY)
+	if err != nil {
+		panic(err)
+	}
+	sub := relay.Subscribe(context.Background(), filters)
 
 	ss, err := nip04.ComputeSharedSecret(nip47RecipientPubkey, nip47Privkey)
 	if err != nil {
@@ -44,13 +54,15 @@ func main() {
 	// calling Sign sets the event ID field and the event Sig field
 	ev.Sign(nip47Privkey)
 
-	// publish the event to multiple relays
-	for _, url := range []string{utils.NIP47_RELAY} {
-		relay, err := nostr.RelayConnect(context.Background(), url)
-		if err != nil {
-			fmt.Println(err)
-			continue
+	status := relay.Publish(context.Background(), ev)
+	fmt.Println(status)
+	for ev := range sub.Events {
+		if ev.Kind == 23195 {
+			decrypted, err := nip04.Decrypt(ev.Content, ss)
+			if err != nil {
+				fmt.Println(err)
+			}
+			fmt.Println(string(decrypted))
 		}
-		fmt.Println("published to ", url, relay.Publish(context.Background(), ev))
 	}
 }
