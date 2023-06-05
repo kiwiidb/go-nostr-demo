@@ -10,11 +10,12 @@ import (
 )
 
 func main() {
-	relay, err := nostr.RelayConnect(context.Background(), utils.SNORT_RELAY)
+	relay, err := nostr.RelayConnect(context.Background(), utils.DAMUS_RELAY)
 	if err != nil {
 		panic(err)
 	}
 	_, pubkeyHex, err := nip19.Decode(utils.KWINTEN_NPUB)
+	fmt.Println(pubkeyHex)
 	if err != nil {
 		panic(err)
 	}
